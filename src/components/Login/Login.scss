@@ -1,0 +1,104 @@
+/* src/components/Login/Login.scss */
+.login-page {
+  position: relative;
+   min-height: 100vh; /* було calc(100vh - 120px) */ 
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+
+  /* синій градієнт як у прикладі */
+  background: linear-gradient(135deg, #000000 0%, #0c0c0c 35%, #1c1d1e 100%);
+
+  .particles-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0; // позаду картки
+  }
+
+  .login-box {
+    position: relative;
+    z-index: 1;
+    width: 520px;
+    max-width: 95vw;
+    padding: 28px 26px 30px;
+    border-radius: 14px;
+    background: #0b0b0b;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    text-align: center;
+
+    h2 {
+      margin: 0 0 16px;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .input-box {
+      margin-bottom: 14px;
+
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 999px;
+        border: 1px solid #d8d8d8;
+        outline: none;
+        transition: border-color .2s, box-shadow .2s;
+
+        &:focus {
+          border-color: white;
+          box-shadow: 0 0 0 3px rgba(123, 44, 191, .15);
+        }
+      }
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      margin: 6px 0 16px;
+
+      a { color: rgb(224, 158, 158); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #fff, #463bc0);
+      color: #080808;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .06s ease;
+
+      &:active { transform: translateY(1px); }
+    }
+  }
+}
+
+/* Шрифти тільки для Login */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&family=Work+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@400;600&display=swap');
+
+.login-page {
+font-family: 'Manrope', 'Nunito Sans', sans-serif;
+
+h1, h2 {
+  font-family: 'Space Grotesk', 'Work Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand {
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quote, .special {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+}

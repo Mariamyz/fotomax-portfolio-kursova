@@ -1,0 +1,375 @@
+// @use "../../styles/_vars" as *;
+
+// /* ───────────────────────────
+//    ГЛОБАЛЬНІ НАЛАШТУВАННЯ
+//    ─────────────────────────── */
+
+// /* 1) Висота хедера (керується в одному місці) */
+// :root {
+//   --header-h: 88px;                /* змінюй це значення — і хедер стане вищим/нижчим */
+//   --brand-size: clamp(32px, 3.6vw, 44px);
+//   --link-size: 18px;
+// }
+
+// @media (max-width: 820px) {
+//   :root { --header-h: 68px; }      /* компактніший хедер на мобільному */
+// }
+
+// /* 2) Резерв місця під fixed-хедер */
+// body { padding-top: var(--header-h) !important; }
+
+// /* ───────────────────────────
+//    HEADER
+//    ─────────────────────────── */
+// .site-header {
+//   position: fixed !important;      /* щоб не зникав */
+//   top: 0; left: 0; right: 0;
+//   z-index: 2147483647 !important;  /* над усім контентом */
+//   background: $bg;
+
+//   /* ледь видима нижня лінія */
+//   box-shadow: inset 0 -1px 0 rgba(255,255,255,.06);
+
+//   /* контейнер навігації */
+//   .nav {
+//     display: grid;
+//     grid-template-columns: 1fr auto 1fr;   /* left | brand | right */
+//     align-items: center;
+//     min-height: var(--header-h);           /* висота контролюється змінною */
+//     padding-block: 0;
+//     gap: 20px;
+//   }
+
+//   a {
+//     text-decoration: none;
+//     color: $text;
+//     letter-spacing: .08em;
+//   }
+
+//   /* лівий/правий блоки меню */
+//   .nav-left,
+//   .nav-right {
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   .nav-left {
+//     gap: 28px;
+//     justify-content: flex-start;
+//   }
+
+//   /* логотип/бренд по центру */
+//   .brand {
+//     font-family: $brand;
+//     font-size: var(--brand-size);
+//     line-height: 1;
+//     margin: 0;
+//     color: $text;
+
+//     a { color: inherit; text-decoration: none; }
+//   }
+
+//   /* права частина: Portfolio, Pricing, Contact | Logout справа */
+//   .nav-right {
+//     justify-content: flex-end;
+
+//     .right-links {
+//       display: flex;
+//       gap: 28px;
+//     }
+
+//     .logout-link {
+//       position: relative;
+//       margin-left: 44px;
+//       padding-left: 18px;
+//       line-height: 1;
+
+//       &::before {
+//         content: "";
+//         position: absolute;
+//         left: 0; top: 50%;
+//         transform: translateY(-50%);
+//         width: 1px; height: 16px;
+//         background: rgba(255,255,255,.18);
+//       }
+//     }
+//   }
+
+//   /* ── бургер ───────────────── */
+//   .burger {
+//     display: none;                    /* показуємо тільки на мобі */
+//     justify-self: end;
+//     width: 40px; height: 40px;        /* трохи більший під нову висоту */
+//     border: 1px solid rgba(255,255,255,.18);
+//     border-radius: 8px;
+//     background: transparent;
+//     cursor: pointer;
+//     padding: 6px 8px;
+
+//     span {
+//       display: block;
+//       height: 2px;
+//       background: $text;
+//       border-radius: 2px;
+//       transition: transform .2s ease, opacity .2s ease;
+//     }
+//     span + span { margin-top: 6px; }
+
+//     /* стан «відкрито» */
+//     &[aria-expanded="true"] {
+//       span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+//       span:nth-child(2) { opacity: 0; }
+//       span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+//     }
+//   }
+
+//   /* ── mobile panel ─────────── */
+//   .mobile-menu {
+//     display: none;
+//     background: linear-gradient(180deg, rgba(10,10,10,.98), rgba(10,10,10,.94));
+//     border-top: 1px solid rgba(255,255,255,.08);
+
+//     &.open {
+//       display: block;
+//       animation: slideDown .22s ease;
+//     }
+
+//     .mobile-inner {
+//       display: grid;
+//       gap: 10px;
+//       padding: 12px 0;
+
+//       .nav-link {
+//         display: block;
+//         padding: 12px 0;
+//         font-size: 16px;
+//         letter-spacing: .06em;
+//         text-transform: uppercase;
+//       }
+
+//       .divider {
+//         height: 1px;
+//         background: rgba(255,255,255,.08);
+//         margin: 6px 0;
+//       }
+
+//       .logout { color: #f0d2d2; }
+//     }
+//   }
+
+//   @keyframes slideDown {
+//     from { transform: translateY(-6px); opacity: 0; }
+//     to   { transform: translateY(0);    opacity: 1; }
+//   }
+
+//   /* ── responsive ───────────── */
+//   @media (max-width: 1024px) {
+//     .nav { gap: 16px; }
+//   }
+
+//   @media (max-width: 820px) {
+//     .nav {
+//       grid-template-columns: auto 1fr auto;  /* burger | brand | (порожньо) */
+//     }
+//     .nav-left,
+//     .nav-right { display: none; }            /* десктопні групи ховаємо */
+//     .burger { display: inline-flex; }
+//   }
+// }
+
+// /* активний пункт */
+// .site-header .nav-link.active {
+//   border-bottom: 1px solid currentColor;
+// }
+
+// /* універсальний вигляд пунктів меню (і для <button>) */
+// .nav-link {
+//   background: none;
+//   border: 0;
+//   font: inherit;
+//   cursor: pointer;
+//   color: inherit;
+//   text-decoration: none;
+//   padding: 6px 0;
+//   transition: opacity .15s ease, color .15s ease;
+
+//   text-transform: uppercase;
+//   font-size: var(--link-size);
+//   letter-spacing: .06em;
+
+//   &:hover { opacity: .85; }
+// }
+
+
+@use "../../styles/_vars" as *;
+
+/* ---------- налаштування ---------- */
+:root{
+  --header-h-primary: 88px;  /* висота верхнього бара з логотипом */
+  --header-h-compact: 77px;  /* висота компакт-бара */
+  --brand-size: clamp(32px, 3.6vw, 44px);
+  --link-size: 18px;
+  --x-padding: clamp(10px, 5vw, 64px);      /* відступи від країв екрана */
+  --max-row: 1440px;                        /* максимальна ширина контенту в барі */
+}
+@media (max-width: 820px){
+  :root{
+    --header-h-primary: 68px;
+    --header-h-compact: 56px;
+  }
+}
+
+/* резерв під хедер (щоб контент не ліз під нього) */
+body{ padding-top: var(--header-h-primary) !important; }
+.no-scroll{ overflow: hidden; }
+
+/* ---------- HEADER ---------- */
+.site-header{
+  position: fixed; inset: 0 0 auto 0;
+  z-index: 2147483647;
+  background: $bg; color: $text;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.06);
+
+  /* тільки .bars задає висоту хедера — активний бар займає 100% */
+  .bars{
+    position: relative;
+    height: var(--header-h-primary);
+    transition: height .28s ease;
+  }
+  &.is-compact .bars{ height: var(--header-h-compact); }
+
+  /* бар накладається поверх (не займає додаткової висоти у потоці) */
+  .bar{
+    position: absolute; inset: 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* left | center | right */
+    align-items: center;                  /* ідеальне вертикальне вирівнювання */
+    height: 100%;
+    width: min(var(--max-row), 100% - var(--x-padding) * 2);
+    margin-inline: auto;
+    gap: 20px;
+    will-change: transform, opacity;
+    transition: transform .32s ease, opacity .32s ease;
+  }
+
+  /* Примусові позиції елементів */
+  .primary-bar{
+    .brand-wrap{ grid-column: 1 / 2; display:flex; align-items:center; }
+    .spacer{ grid-column: 2 / 3; }
+    .nav-right{ grid-column: 3 / 4; display:flex; align-items:center; gap:28px; }
+    .burger{ grid-column: 3 / 4; justify-self:end; }  /* тільки розміщення у сітці */
+  }
+  .compact-bar{
+    .nav-center{ grid-column: 2 / 3; display:flex; justify-content:center; gap:36px; }
+    .burger{ grid-column: 3 / 4; justify-self:end; }
+  }
+
+  /* стан показу */
+  &.is-top{
+    .primary-bar{ transform: translateY(0); opacity: 1; }
+    .compact-bar{ transform: translateY(-100%); opacity: 0; pointer-events: none; }
+  }
+  &.is-compact{
+    .primary-bar{ transform: translateY(-100%); opacity: 0; pointer-events: none; }
+    .compact-bar{ transform: translateY(0); opacity: 1; }
+  }
+
+  /* бренд */
+  .brand{
+    font-family: $brand;
+    font-size: var(--brand-size);
+    line-height: 1;
+    color: $text;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* посилання-меню — рівно по центру по Y */
+  .nav-link{
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 clamp(6px, .8vw, 12px);
+    text-transform: uppercase;
+    font-size: var(--link-size);
+    letter-spacing: .06em;
+    background: none; border: 0; color: inherit; cursor: pointer;
+    transition: opacity .15s ease, color .15s ease;
+    &:hover{ opacity: .85; }
+    &.active{ border-bottom: 1px solid currentColor; }
+  }
+
+  /* показуємо бургер тільки на мобільних */
+  .burger{ display: none; }               /* стилі даємо поза .site-header */
+  @media (max-width: 820px){
+    .primary-bar .nav-right{ display:none; }
+    .burger{ display:inline-flex; }
+  }
+
+  /* мобільне меню */
+  .mobile-menu{
+    display: none;
+    background: linear-gradient(180deg, rgba(10,10,10,.98), rgba(10,10,10,.94));
+    border-top: 1px solid rgba(255,255,255,.08);
+    .mobile-inner{
+      width: min(var(--max-row), 100% - var(--x-padding) * 2);
+      margin-inline: auto;
+      display: grid; gap: 10px; padding: 12px 0;
+      .nav-link{ height: auto; padding: 12px 0; }
+    }
+    &.open{ display: block; animation: slideDown .22s ease; }
+  }
+
+  @keyframes slideDown{
+    from{ transform: translateY(-6px); opacity: 0; }
+    to  { transform: translateY(0);    opacity: 1; }
+  }
+}
+
+/* ====== ЄДИНИЙ блок стилів бургера (без дублів) ====== */
+.burger{
+  position: relative;
+  width: 40px; height: 40px;
+  padding: 0;                                 /* важливо: без падінгів */
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+
+  /* прибираємо будь-який текст/метрики */
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* три смужки — абсолютно позиціоновані і точно по центру */
+  span{
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 20px; height: 2px;
+    background: $text;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform .22s ease, opacity .18s ease;
+  }
+  /* рознос по Y через translate */
+  span:nth-child(1){ transform: translate(-50%, calc(-50% - 6px)); }
+  span:nth-child(2){ transform: translate(-50%, -50%); }
+  span:nth-child(3){ transform: translate(-50%, calc(-50% + 6px)); }
+
+  /* стан «відкрито» -> хрестик */
+  &[aria-expanded="true"]{
+    span:nth-child(1){ transform: translate(-50%, -50%) rotate(45deg); }
+    span:nth-child(2){ opacity: 0; }
+    span:nth-child(3){ transform: translate(-50%, -50%) rotate(-45deg); }
+  }
+}
+
+/* бургер показуємо ТІЛЬКИ на мобільних */
+@media (max-width: 820px){
+  .burger{ display: inline-flex; }
+}
