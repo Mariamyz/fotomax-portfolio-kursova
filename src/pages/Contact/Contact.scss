@@ -9,22 +9,86 @@ $muted:    var(--text-muted);
   margin-inline: auto;
 }
 
-.contact-page{
+.contact-page {
   background: $bg-page;
   color: $text;
 }
 
-.contact-hero{
+.contact-hero {
   padding-block: clamp(28px, 7vw, 48px);
 
-  .portrait{
-    display: block;
-    width: min(560px, 90%);
+ 
+  .portrait-wrap{
+    position: relative;
+    width: min(560px, 92%);
     margin: 0 auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 22px 60px rgba(0,0,0,.55);
+
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.6);
+
+  
+    box-shadow:
+      0 22px 60px rgba(0,0,0,.55),
+      0 1px 0 rgba(255,255,255,.06) inset;
+
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease,
+      border-color .25s ease,
+      filter .25s ease;
+
+    transform: perspective(1000px) translateZ(0);
+
+    &::after{
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(110% 80% at 50% 10%,
+        rgba(255,255,255,.06), transparent 55%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transition: opacity .3s ease;
+      opacity: .5;
+    }
+
+    .portrait{
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transform: translateZ(0) scale(1.01);
+      transition: transform .45s ease, filter .3s ease;
+    }
+
+    .portrait-glow{
+      position: absolute; inset: -10%;
+      background: radial-gradient(60% 45% at 70% 20%,
+        rgba(255,255,255,.10), transparent 60%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    &:hover,
+    &:focus-within{
+      border-color: rgba(0,0,0,.85);
+      box-shadow:
+        0 28px 70px rgba(0,0,0,.65),
+        0 1px 0 rgba(255,255,255,.08) inset;
+      transform: perspective(1000px) translateZ(0) rotateX(.8deg) rotateY(-.8deg);
+
+      .portrait{
+        transform: translateZ(0) scale(1.04) rotateX(.4deg) rotateY(-.4deg);
+        filter: saturate(1.06) contrast(1.03);
+      }
+
+      .portrait-glow{
+        opacity: .95;
+        transform: scale(1.05);
+      }
+
+      &::after{ opacity: .7; }
+    }
   }
 }
 
@@ -50,7 +114,7 @@ $muted:    var(--text-muted);
     margin-bottom: clamp(18px, 2.4vw, 28px);
   }
 
-  h1{
+  h1, .page-title{
     margin: 0 0 14px;
     font-size: clamp(28px, 4.8vw, 44px);
     line-height: 1.2;
@@ -93,7 +157,6 @@ $muted:    var(--text-muted);
   border-radius: 12px;
   transition: transform .18s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
 
-
   svg{ flex: 0 0 auto; opacity: .9; font-size: 20px; }
 
   &:hover{
@@ -135,5 +198,3 @@ $muted:    var(--text-muted);
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; }
 }
-
-

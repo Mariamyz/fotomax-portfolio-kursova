@@ -19,8 +19,8 @@ const LINKS = {
   email: "mailto:hello@fotomax.ua",
 };
 
-const portrait =
-  "https://imprx.easyweek.io/_/rs:fit:589:530:1:0/gravity:sm/dpr:1/aHR0cHM6Ly9zdG9yYWdlMi5lYXN5d2Vlay5pby93ZWJzaXRlLXY0L2dsb2JhbC9pbmR1c3RyeS10b3AvcGhvdG9ncmFwaGVyLnBuZw.webp";
+
+const portrait = "public/img/c470272f-7d82-48f8-842c-8ee50b54d781.png";
 
 export default function Contact() {
   return (
@@ -28,12 +28,15 @@ export default function Contact() {
       {portrait ? (
         <section className="contact-hero">
           <div className="section-inner">
-            <img
-              className="portrait"
-              src={portrait}
-              alt="Fotomax portrait"
-              loading="lazy"
-            />
+            <div className="portrait-wrap">
+              <img
+                className="portrait"
+                src={portrait}
+                alt="Fotomax portrait"
+                loading="lazy"
+              />
+              <span className="portrait-glow" aria-hidden />
+            </div>
           </div>
         </section>
       ) : null}
@@ -42,7 +45,6 @@ export default function Contact() {
         <div className="section-inner narrow">
           <div className="heading">
             <div className="eyebrow">{NAME}</div>
-
             <h1 className="page-title">{TITLE}</h1>
 
             <a className="phone" href={`tel:${PHONE_TEL}`}>

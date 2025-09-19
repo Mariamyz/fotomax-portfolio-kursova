@@ -19,7 +19,7 @@ const defaultContent: SiteContent = {
     title: "Story-driven photography",
     subtitle: "Honest, timeless, natural.",
     imageUrl:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+      "https://imglife.pravda.com.ua/images/doc/a/0/a0380ab-vesillia-photo-golov.jpg",
   },
   about: {
     bio: [
