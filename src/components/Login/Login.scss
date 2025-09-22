@@ -1,19 +1,17 @@
-/* src/components/Login/Login.scss */
+
 .login-page {
   position: relative;
-   min-height: 100vh; /* було calc(100vh - 120px) */ 
+   min-height: 100vh; 
   display: grid;
   place-items: center;
   overflow: hidden;
 
-
-  /* синій градієнт як у прикладі */
   background: linear-gradient(135deg, #000000 0%, #0c0c0c 35%, #1c1d1e 100%);
 
   .particles-bg {
     position: absolute;
     inset: 0;
-    z-index: 0; // позаду картки
+    z-index: 0; 
   }
 
   .login-box {

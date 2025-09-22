@@ -23,19 +23,19 @@ const wa = (pkg: string) =>
 
 const PACKAGES = [
   {
-    name: "Family Photography",
+    name: "Сімейна фотографія",
     duration: "2 hr 30 min",
     price: "$150",
     img: "public/img/vesilna-fotosesiya-21-705x471.jpg",
   },
   {
-    name: "Pregnancy Photography",
+    name: "Фотограія вагітності",
     duration: "2 hr 30 min",
     price: "$150",
     img: "public/img/DSC_5449-min-1.jpg",
   },
   {
-    name: "Baby Photography",
+    name: "Дитяча фотографія",
     duration: "2 hr 30 min",
     price: "$150",
     img: "public/img/6.jpg",
@@ -59,6 +59,7 @@ export default function Pricing() {
           sx={{
             fontSize: { xs: 34, md: 48 },
             letterSpacing: ".06em",
+            fontFamily: "var(--font-accent), 'Playfair Display', serif !important",
             mb: 1.5,
           }}
         >
@@ -162,10 +163,10 @@ export default function Pricing() {
         </Grid>
       </Container>
 
-      {/* Phone note (EN) */}
+       {/* Phone  */}
       <Container sx={{ pb: { xs: 8, md: 10 }, textAlign: "center" }}>
         <Typography sx={{ color: "rgba(255,255,255,.72)" }}>
-          Prefer to call? Booking is also available by phone:&nbsp;
+        Бажаєте зателефонувати? Бронювання також доступне за телефоном:&nbsp;
           <MuiLink
             href={`tel:${PHONE_TEL.replace(/[^\d+]/g, "")}`}
             color="inherit"

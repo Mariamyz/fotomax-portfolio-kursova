@@ -17,7 +17,7 @@ export default function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const correctEmail = "admin@test.com";
+    const correctEmail = "ADMIN@ADMIN.COM";
     const correctPassword = "123456";
 
     if (email === correctEmail && password === correctPassword) {

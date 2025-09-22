@@ -1,0 +1,27 @@
+
+.portfolio-grid {
+    overflow: visible; 
+  }
+  
+  .portfolio-item {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .portfolio-img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform .35s ease, box-shadow .35s ease, filter .3s ease;
+    will-change: transform;
+    transform-origin: center;
+  }
+  
+  .portfolio-item:hover .portfolio-img {
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px rgba(0,0,0,.22);
+    filter: saturate(1.04) contrast(1.02);
+  }
+  
+  body { overflow-x: hidden; }
+  

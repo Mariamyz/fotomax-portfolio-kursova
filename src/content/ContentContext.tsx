@@ -41,15 +41,15 @@ const defaultContent: SiteContent = {
       { label: "Міст", value: "20+" },
     ],
     stripImages: [
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1200&auto=format&fit=crop",
+      "https://media.macphun.com/img/uploads/macphun/blog/3424/_11.webp?q=75&w=1710&h=906&resize=cover",
+      "https://lh3.googleusercontent.com/proxy/YR4cyO79x1bUu5lLRrQCY8elTlDNbKABLLvbXVw0D9PS6uY62Fi_eWJqSfnQw4-8-lMw-HzW9BU_Q8fFVmANh2R2jC8Y7D2zRs2dxUkxDjwTgBgLwKoE",
+      "https://lh3.googleusercontent.com/proxy/gXL9SInOoAAY9fAv054Ls8yqkzdZ2HeD2-QDTKGKHxe3hxbEzydR-k3G9vr2M-DSYlh-ii8gc-_QBsL3UhY36wrUAbIGOOsMrD-Ox8k5kRyAwJOP06p9",
+      "https://assets.mobicard.com.ua/mobicard/articles/IicGKacVkJo0rcKXPCoWoO3j3rIeVTtqq5F4t3Z9.webp",
     ],
   },
   gallery: [
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
+    "https://depositphotos-blog.s3.eu-west-1.amazonaws.com/uploads/2021/08/Complete-Guide-to-Family-Photography-Tips-Ideas-and-Trends_7.jpg",
+    "https://frontpage.com.ua/wp-content/uploads/2020/11/family115.jpg",
   ],
 };
 

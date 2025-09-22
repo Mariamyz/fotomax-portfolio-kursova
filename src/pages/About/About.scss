@@ -283,4 +283,19 @@
     * { transition: none !important; animation: none !important; }
   }
   
+  .about-diplomas h2{
+    text-align:center;
+    margin-inline:auto;
+    width: fit-content;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .about-diplomas h2::after{
+    content:"";
+    position:absolute; left:50%; bottom:0;
+    transform: translateX(-50%);
+    width: 120px; height: 2px;
+    background: #0b0b0b;
+    border-radius: 2px;
+  }
   

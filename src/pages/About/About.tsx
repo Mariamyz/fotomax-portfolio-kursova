@@ -64,7 +64,7 @@ export default function About() {
                 <p key={i}>{p}</p>
               ))}
               <a className="cta" href="/contact">
-                Book a session <span className="arrow">›</span>
+                Забронювати сеанс <span className="arrow">›</span>
               </a>
             </div>
           </div>
