@@ -28,3 +28,16 @@ textarea { min-height:90px; resize:vertical; }
 .actions-bar { display:flex; gap:12px; }
 .actions-bar button { background:#fff; color:#111; border:0; padding:10px 14px; border-radius:999px; cursor:pointer; }
 .actions-bar .danger { background:#ff4d4f; color:#fff; }
+
+
+.admin-topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    margin-bottom: 16px;
+  }
+  .logout-btn{
+    padding: 8px 14px; border-radius: 10px; border:1px solid rgba(255,255,255,.18);
+    background: transparent; color: inherit; cursor: pointer;
+    transition: background .2s ease, transform .15s ease;
+    &:hover{ background: rgba(255,255,255,.08); transform: translateY(-1px); }
+  }
+  

@@ -15,6 +15,9 @@ import Login from "./components/Login/Login";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 
+
+import NotFound from "./pages/NotFound/NotFound"; 
+
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   return isLoggedIn ? children : <Navigate to="/admin/login" replace />;
@@ -47,13 +50,17 @@ export default function App() {
           }
         />
 
-        {/* 404 -> на головну */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <ContactFab
         label="Foto Max"
-        avatarSrc="public/img/9f98f76b-fe61-4a97-847b-c60c6796fb72.png"          
+        // варіант 1 (з public): avatarSrc="/img/9f98f76b-fe61-4a97-847b-c60c6796fb72.png"
+        // варіант 2 (імпорт): 
+        // import avatar from "/img/9f98f76b-fe61-4a97-847b-c60c6796fb72.png";
+        // avatarSrc={avatar}
+        avatarSrc="/img/9f98f76b-fe61-4a97-847b-c60c6796fb72.png"
         phone="+380671112233"
         whatsapp="+380671112233"
         telegram="@fotomax"
@@ -66,3 +73,4 @@ export default function App() {
     </>
   );
 }
+

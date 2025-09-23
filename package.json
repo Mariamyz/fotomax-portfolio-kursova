@@ -16,6 +16,7 @@
     "@mui/material": "^7.3.2",
     "@reduxjs/toolkit": "^2.9.0",
     "framer-motion": "^10.18.0",
+    "lottie-react": "^2.4.1",
     "notistack": "^3.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

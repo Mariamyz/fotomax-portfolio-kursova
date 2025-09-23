@@ -1,0 +1,35 @@
+.nf-wrap {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #0b0b0b;
+    color: #fff;
+  }
+  
+  .nf-card {
+    width: min(1200px, 100%);
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  }
+  
+  .nf-anim { width: min(420px, 90%); margin: 0 auto 12px; }
+  .nf-title { font-size: clamp(22px, 4vw, 32px); margin: 6px 0 8px; }
+  .nf-text  { opacity: .8; margin-bottom: 18px; }
+  
+  .nf-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(90deg, #d7d7e3,#c9c9ff,#8a86e8);
+    color: #0b0b0b;
+    transition: transform .15s ease;
+  }
+  .nf-btn:hover { transform: translateY(-1px); }
+  

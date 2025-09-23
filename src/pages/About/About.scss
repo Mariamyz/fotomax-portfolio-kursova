@@ -101,17 +101,56 @@
       font-size: 1.06rem;
     }
   
+    /* ---- КНОПКА: біла → outline на hover ---- */
     .cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-top: 16px; padding: 12px 20px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--grad-from), var(--grad-mid) 60%, var(--grad-to));
-      color: #0a0a0a; font-weight: 600; text-decoration: none;
-      transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
-      box-shadow: 0 8px 22px rgba(138,134,232,.28);
-      .arrow { font-size: 1.2em; line-height: 1; }
-      &:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(138,134,232,.35); filter: brightness(1.02); }
-      &:active { transform: translateY(1px); }
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+  
+      margin-top: 16px;
+      padding: 12px 24px;
+  
+      border-radius: 2px;           /* прямокутна як у зразку */
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 700;
+      height: 90px;
+      font-size: 14px;
+      text-decoration: none;
+  
+      background: #fff;             /* старт: біла */
+      color: #111;
+      border: 1px solid #fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
+  
+      transition:
+        background .18s ease,
+        color .18s ease,
+        border-color .18s ease,
+        transform .18s ease,
+        box-shadow .18s ease;
+  
+      .arrow { font-size: 1.1em; line-height: 1; }
+    }
+  
+    .cta:hover {
+      background: transparent;      /* hover: outline */
+      color: #fff;
+      border-color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+  
+    .cta:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 18px rgba(0,0,0,.22);
+    }
+  
+    .cta:focus-visible {
+      outline: 0;
+      box-shadow:
+        0 0 0 2px rgba(255,255,255,.35),
+        0 8px 22px rgba(0,0,0,.22);
     }
   }
   

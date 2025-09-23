@@ -23,10 +23,9 @@ const LINKS = {
   email: "mailto:hello@fotomax.ua",
 };
 
-/* важливо: зображення з public — без префіксу 'public/' */
 const portrait = "/img/c470272f-7d82-48f8-842c-8ee50b54d781.png";
 
-/* ——— Схема форми ——— */
+
 const schema = z.object({
   name: z.string().min(2, "Вкажіть ім’я"),
   phone: z.string().min(6, "Вкажіть телефон"),

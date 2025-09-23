@@ -200,10 +200,8 @@ $muted:    var(--text-muted);
   *{ transition: none !important; }
 }
 
-/* --- hover для портрету --- */
 .contact-hero .portrait{
   position: relative;
-  border: 1px solid rgba(255,255,255,.18);
   transition: transform .28s ease, box-shadow .35s ease, filter .28s ease, border-color .28s ease;
   &:hover{
     transform: translateY(-3px) scale(1.02);
@@ -214,34 +212,58 @@ $muted:    var(--text-muted);
 }
 
 /* --- форма заявки --- */
-.lead-form{
-  margin-top: clamp(18px, 4vw, 32px);
-  display: grid; gap: 14px;
-}
-.lead-form .field{ display:flex; flex-direction:column; gap:6px; }
-.lead-form label{ font-size: .9rem; opacity:.85; }
-.lead-form input,
-.lead-form textarea{
-  width:100%; color:var(--text-main); background:transparent;
-  border:1px solid rgba(255,255,255,.22); border-radius:10px;
-  padding:12px 14px; outline:none;
-  transition:border-color .2s ease, background .2s ease, box-shadow .25s ease;
-}
-.lead-form input:focus,
-.lead-form textarea:focus{
-  border-color: rgba(255,255,255,.35);
-  background: rgba(255,255,255,.04);
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
-}
-.lead-form .error{ color:#ff9a9a; font-size:.85rem; }
+
 .lead-form .submit{
-  justify-self:start;
-  margin-top:6px; padding:12px 18px; border-radius:999px;
-  border:1px solid rgba(255,255,255,.28);
-  background: linear-gradient(90deg, var(--grad-from), var(--grad-mid) 60%, var(--grad-to));
-  color:#0a0a0a; font-weight:700; cursor:pointer;
-  transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
-  box-shadow: 0 8px 22px rgba(138,134,232,.28);
+  justify-self: start;
+  margin-top: 6px;
+  padding: 12px 24px;
+
+  border-radius: 2px;                 
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  font-size: 14px;
+
+  background: #fff;
+  color: #111;
+  border: 1px solid #fff;
+
+  cursor: pointer;
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
 }
-.lead-form .submit:hover{ transform: translateY(-1px); box-shadow: 0 16px 32px rgba(138,134,232,.35); }
-.lead-form .submit:disabled{ opacity:.6; cursor:not-allowed; transform:none; box-shadow:none; }
+
+.lead-form .submit:hover:not(:disabled){
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+}
+
+.lead-form .submit:active:not(:disabled){
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
+}
+
+.lead-form .submit:focus-visible{
+  outline: 0;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.35),
+    0 8px 22px rgba(0,0,0,.22);
+}
+
+.lead-form .submit:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  background: #e9e9e9;    
+  color: #7a7a7a;
+  border-color: #e9e9e9;
+}

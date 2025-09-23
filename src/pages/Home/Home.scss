@@ -1,6 +1,5 @@
 @use "../../styles/_vars" as *;
 
-
 .container {
   width: min(1200px, 100% - clamp(24px, 6vw, 80px));
   margin-inline: auto;
@@ -10,7 +9,6 @@
   position: relative;
   background: var(--page-bg);
   color: var(--text-main);
-
 
   &::before {
     content: "";
@@ -26,7 +24,6 @@
     padding-block: clamp(64px, 16vw, 160px);
     text-align: center;
   }
-
 
   .hero-title {
     text-transform: uppercase;
@@ -49,9 +46,10 @@
   }
 }
 
-// відео
+/* відео */
 .home-reel {
   background: #000;
+
   .reel-wrap {
     position: relative;
     width: 100vw;
@@ -79,107 +77,107 @@
 }
 
 .home-intro {
-    background: var(--section-white);
-    color: #0c0c0c;
-    padding-block: clamp(40px, 8vw, 96px);
-  
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.25fr;
-      gap: clamp(28px, 5vw, 64px);
-      align-items: center;
-  
-      @media (max-width: 1024px) {
-        grid-template-columns: 1fr;
-      }
-    }
-  
-    .intro-copy {
-      .eyebrow {
-        color: #6b7280;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        font-size: 13px;
-        margin-bottom: 10px;
-      }
-  
-      .intro-title {
-        font-family: var(--font-accent);
-        text-transform: uppercase;
-        letter-spacing: .06em;
-        font-size: clamp(28px, 5.6vw, 52px);
-        margin: 0 0 12px;
-        line-height: 1.15;
-      }
-  
-      .intro-text {
-        color: #374151;
-        line-height: 1.7;
-        font-size: clamp(15px, 2.4vw, 18px);
-      }
-    }
-  
-    .intro-photos {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: 1fr 1fr;
-      justify-self: end;           
-      width: min(860px, 100%);      
-  
-      @media (max-width: 1280px) { width: min(780px, 100%); }
-      @media (max-width: 1024px) { 
-        width: 100%;
-        grid-template-columns: 1fr;
-        justify-self: stretch;
-      }
-    }
-  
-    .photo-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #0b0b0b;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 14px 28px rgba(0,0,0,.15);
-      transform: translateZ(0);
-      transition: transform .22s ease, box-shadow .25s ease, border-color .25s ease, filter .25s ease;
-  
-    
-      height: clamp(360px, 46vw, 600px);
-      width:  400px;
+  background: var(--section-white);
+  color: #0c0c0c;
+  padding-block: clamp(40px, 8vw, 96px);
 
-      img {
-        width: 100%; height: 100%;
-        display: block; object-fit: cover;
-        transform: scale(1.02);
-        transition: transform .35s ease, filter .3s ease;
-      }
-  
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 22px 46px rgba(0,0,0,.28);
-        border-color: rgba(0,0,0,.12);
-        img { transform: scale(1.06); filter: saturate(1.06) contrast(1.02); }
-      }
-  
-     
-      &.tall {
-        grid-row: span 2;
-  
-        @media (max-width: 1024px) {
-          grid-row: auto;
-        }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .intro-copy {
+    .eyebrow {
+      color: #6b7280;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .intro-title {
+      font-family: var(--font-accent);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: clamp(28px, 5.6vw, 52px);
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    .intro-text {
+      color: #374151;
+      line-height: 1.7;
+      font-size: clamp(15px, 2.4vw, 18px);
+    }
+  }
+
+  .intro-photos {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+    justify-self: end;           
+    width: min(860px, 100%);      
+
+    @media (max-width: 1280px) { width: min(780px, 100%); }
+    @media (max-width: 1024px) { 
+      width: 100%;
+      grid-template-columns: 1fr;
+      justify-self: stretch;
+    }
+  }
+
+  .photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #0b0b0b;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 14px 28px rgba(0,0,0,.15);
+    transform: translateZ(0);
+    transition: transform .22s ease, box-shadow .25s ease, border-color .25s ease, filter .25s ease;
+
+    height: clamp(360px, 46vw, 600px);
+    width:  400px;
+
+    img {
+      width: 100%; height: 100%;
+      display: block; object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .35s ease, filter .3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 46px rgba(0,0,0,.28);
+      border-color: rgba(0,0,0,.12);
+      img { transform: scale(1.06); filter: saturate(1.06) contrast(1.02); }
+    }
+
+    &.tall {
+      grid-row: span 2;
+
+      @media (max-width: 1024px) {
+        grid-row: auto;
       }
     }
   }
-  
+}
+
 .home-reel {
   position: relative;
+
   .reel-wrap {
     position: relative;
     height: clamp(420px, 60vh, 640px);
     overflow: hidden;
   }
+
   .reel {
     position: absolute;
     inset: 0;
@@ -187,6 +185,7 @@
     height: 100%;
     object-fit: cover;
   }
+
   .reel-glow {
     position: absolute;
     inset: 0;
@@ -194,6 +193,7 @@
     pointer-events: none;
     z-index: 1;
   }
+
   .reel-cta {
     position: relative;
     z-index: 2;
@@ -207,21 +207,6 @@
     h2 { font-size: clamp(28px, 5vw, 56px); margin: 0 0 14px; font-weight: 700; }
     p  { font-size: clamp(16px, 2vw, 20px); line-height: 1.6; opacity: .95; max-width: 760px; margin: 0 auto 24px; }
   }
-
-  .reel-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #fff;
-    color: #111;
-    border-radius: 10px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    font-weight: 700;
-    box-shadow: 0 14px 36px rgba(0,0,0,.28);
-    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-  }
-  .reel-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 44px rgba(0,0,0,.34); }
-  .reel-btn:active { transform: translateY(0); box-shadow: 0 10px 26px rgba(0,0,0,.24); }
 }
 
 .home-reel.secondary .reel-cta h2 {
@@ -231,47 +216,50 @@
 }
 
 .btn-gradient {
-  --btn-h: 44px;
-  --radius: 999px;
-  --shadow: 0 10px 28px rgba(0,0,0,.35);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
 
-  height: var(--btn-h);
-  padding: 0 22px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  letter-spacing: .02em;
+  padding: 10px 26px;
+  border-radius: 2px;             
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 900;
+  height: 90px; 
+  font-size: 14px;
+  line-height: 1;
   text-decoration: none;
 
-  color: #0b0b0f; /* темний текст як на зразку */
-  background:
-    radial-gradient(120% 120% at 10% 10%, rgba(255,255,255,.9) 0%, rgba(255,255,255,.6) 40%, rgba(255,255,255,.2) 70%, transparent 100%),
-    linear-gradient(180deg, #dfe1ff 0%, #b8b7ff 45%, #9793ff 100%);
-  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.6);
-  border: 1px solid rgba(255,255,255,.28);
+  background: #fff;
+  color: #111;
+  border: 1px solid #fff;
 
-  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
 }
 
 .btn-gradient:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 14px 36px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.65);
-  filter: saturate(1.05);
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
 }
+
 .btn-gradient:active {
   transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.55);
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
 }
+
 .btn-gradient:focus-visible {
   outline: 0;
   box-shadow:
-    0 0 0 3px rgba(151,147,255,.45),
-    0 10px 28px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.6);
+    0 0 0 2px rgba(255,255,255,.35),
+    0 8px 22px rgba(0,0,0,.22);
 }
 
 .home-reel.secondary .reel-cta {
