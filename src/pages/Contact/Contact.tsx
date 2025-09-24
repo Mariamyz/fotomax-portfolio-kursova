@@ -1,4 +1,3 @@
-
 import "./Contact.scss";
 
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -7,7 +6,6 @@ import { enqueueSnackbar } from "notistack";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 
 const NAME = "МАКСИМ МАЗУРКЕВИЧ";
 const TITLE = "Професійний сімейний та весільний фотограф";
@@ -46,7 +44,9 @@ export default function Contact() {
       enqueueSnackbar("Дякую! Я з вами зв’яжуся.", { variant: "success" });
       reset();
     } catch {
-      enqueueSnackbar("Щось пішло не так, спробуйте ще раз.", { variant: "error" });
+      enqueueSnackbar("Щось пішло не так, спробуйте ще раз.", {
+        variant: "error",
+      });
     }
   };
 
@@ -76,11 +76,7 @@ export default function Contact() {
       <section className="contact-main">
         <div className="section-inner narrow">
           <div className="heading">
-            <div
-              className="eyebrow"
-              data-aos="fade-up"
-              data-aos-duration="650"
-            >
+            <div className="eyebrow" data-aos="fade-up" data-aos-duration="650">
               {NAME}
             </div>
 

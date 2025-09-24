@@ -45,13 +45,13 @@ export default function ForgotPassword() {
             shape: { type: "circle" },
             opacity: { value: { min: 0.1, max: 1 } },
             size: { value: { min: 1, max: 2 } },
-            move: { enable: true, speed: 0.2 }
+            move: { enable: true, speed: 0.2 },
           },
           interactivity: {
             events: { onHover: { enable: true, mode: "repulse" } },
-            modes: { repulse: { distance: 100, duration: 0.4 } }
+            modes: { repulse: { distance: 100, duration: 0.4 } },
           },
-          detectRetina: true
+          detectRetina: true,
         }}
       />
 
@@ -65,7 +65,9 @@ export default function ForgotPassword() {
 
         {!done ? (
           <form onSubmit={handleSubmit}>
-            <p className="hint">Please enter the email you use to sign in to acme</p>
+            <p className="hint">
+              Please enter the email you use to sign in to acme
+            </p>
 
             <div className="input-icon">
               <FaUser className="icon" />
@@ -90,9 +92,12 @@ export default function ForgotPassword() {
         ) : (
           <div className="success">
             <p>
-              Якщо обліковка існує, ми надіслали лист на <b>{email}</b>. Перевір пошту (і спам).
+              Якщо обліковка існує, ми надіслали лист на <b>{email}</b>. Перевір
+              пошту (і спам).
             </p>
-            <Link to="/admin/login" className="back-link">Повернутися до входу</Link>
+            <Link to="/admin/login" className="back-link">
+              Повернутися до входу
+            </Link>
           </div>
         )}
       </motion.div>

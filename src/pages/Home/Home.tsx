@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
@@ -29,7 +28,9 @@ const REEL_2 = {
 };
 
 type CSSVarStyle = React.CSSProperties & { ["--hero-bg"]?: string };
-const heroStyle: CSSVarStyle = HERO.bg ? { ["--hero-bg"]: `url(${HERO.bg})` } : {};
+const heroStyle: CSSVarStyle = HERO.bg
+  ? { ["--hero-bg"]: `url(${HERO.bg})` }
+  : {};
 
 export default function Home(): JSX.Element {
   return (
@@ -177,10 +178,12 @@ export default function Home(): JSX.Element {
             data-aos-duration="750"
             data-aos-easing="ease-out-cubic"
           >
-            <h2 data-aos="fade-up" data-aos-delay="60">Записатися на зйомку</h2>
+            <h2 data-aos="fade-up" data-aos-delay="60">
+              Записатися на зйомку
+            </h2>
             <p data-aos="fade-up" data-aos-delay="140">
-              Завдяки досвіду та творчому підходу я зафіксую для вас найважливіші
-              моменти, створюючи унікальні й неповторні спогади.
+              Завдяки досвіду та творчому підходу я зафіксую для вас
+              найважливіші моменти, створюючи унікальні й неповторні спогади.
             </p>
             <Link
               to="/contact"

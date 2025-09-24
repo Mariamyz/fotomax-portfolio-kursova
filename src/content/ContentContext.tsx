@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const STORAGE_KEY = "site_content_v1";
 
 export type SiteContent = {
-  hero: { title: string; subtitle: string; imageUrl: string; };
+  hero: { title: string; subtitle: string; imageUrl: string };
   about: {
     bio: string[];
     awards: string[];
@@ -62,25 +68,34 @@ type ContentCtx = {
 
 const Ctx = createContext<ContentCtx | null>(null);
 
-export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [content, setContent] = useState<SiteContent>(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       return raw ? JSON.parse(raw) : defaultContent;
-    } catch { return defaultContent; }
+    } catch {
+      return defaultContent;
+    }
   });
 
-  const api = useMemo<ContentCtx>(() => ({
-    content,
-    setContent,
-    save: () => localStorage.setItem(STORAGE_KEY, JSON.stringify(content)),
-    reset: () => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultContent));
-      setContent(defaultContent);
-    },
-  }), [content]);
+  const api = useMemo<ContentCtx>(
+    () => ({
+      content,
+      setContent,
+      save: () => localStorage.setItem(STORAGE_KEY, JSON.stringify(content)),
+      reset: () => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultContent));
+        setContent(defaultContent);
+      },
+    }),
+    [content],
+  );
 
-  useEffect(() => { localStorage.setItem(STORAGE_KEY, JSON.stringify(content)); }, [content]);
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
+  }, [content]);
 
   return <Ctx.Provider value={api}>{children}</Ctx.Provider>;
 };

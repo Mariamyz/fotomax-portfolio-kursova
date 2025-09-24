@@ -16,7 +16,9 @@ export default function NotFound() {
           Можливо, адреса введена з помилкою або сторінка була переміщена.
         </p>
 
-        <Link to="/" className="nf-btn">На головну</Link>
+        <Link to="/" className="nf-btn">
+          На головну
+        </Link>
       </div>
     </main>
   );

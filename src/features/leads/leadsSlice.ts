@@ -34,7 +34,7 @@ export const submitLead = createAsyncThunk(
       id,
       createdAt: new Date().toISOString(),
     } as Lead;
-  }
+  },
 );
 
 const leadsSlice = createSlice({
@@ -46,12 +46,16 @@ const leadsSlice = createSlice({
     },
   },
   extraReducers: (b) => {
-    b.addCase(submitLead.pending, (s) => { s.sending = true; });
+    b.addCase(submitLead.pending, (s) => {
+      s.sending = true;
+    });
     b.addCase(submitLead.fulfilled, (s, a) => {
       s.items.unshift(a.payload);
       s.sending = false;
     });
-    b.addCase(submitLead.rejected, (s) => { s.sending = false; });
+    b.addCase(submitLead.rejected, (s) => {
+      s.sending = false;
+    });
   },
 });
 

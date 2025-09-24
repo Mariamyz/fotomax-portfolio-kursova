@@ -6,7 +6,6 @@ import { loadSlim } from "tsparticles-slim";
 import "./Login.scss";
 import { Link } from "react-router-dom";
 
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -87,7 +86,9 @@ export default function Login() {
           </div>
 
           <div className="options">
-            <label><input type="checkbox" /> Remember me</label>
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
             <Link to="/admin/forgot-password">Forgot password?</Link>
           </div>
 

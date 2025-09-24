@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import AOS from "aos";
@@ -29,7 +28,7 @@ export default function App() {
     AOS.init({
       duration: 700,
       easing: "ease-out-cubic",
-      once: true,          
+      once: true,
       offset: 0,
     });
   }, []);
@@ -49,7 +48,7 @@ export default function App() {
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/forgot-password" element={<ForgotPassword />} />
 
-         {/* адмінка  */}
+        {/* адмінка  */}
         <Route
           path="/admin/*"
           element={

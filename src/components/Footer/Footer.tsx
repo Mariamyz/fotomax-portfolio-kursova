@@ -29,9 +29,7 @@ export default function Footer() {
         <span>Україна • Світ</span>
       </div>
 
-      <div className="footer-copy">
-        © {new Date().getFullYear()} Foto Max
-      </div>
+      <div className="footer-copy">© {new Date().getFullYear()} Foto Max</div>
     </footer>
   );
 }

@@ -1,4 +1,3 @@
-
 import "./About.scss";
 import { useContent } from "../../content/ContentContext";
 import { useEffect, useRef, useState } from "react";
@@ -7,7 +6,7 @@ export default function About() {
   const { content } = useContent();
   const a = content.about;
 
-  // /* HERO 
+  // /* HERO
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const [heroMuted, setHeroMuted] = useState(true);
   const [heroReady, setHeroReady] = useState(false);
@@ -20,7 +19,7 @@ export default function About() {
         if (entry.isIntersecting) v.play().catch(() => {});
         else v.pause();
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     io.observe(v);
     return () => io.disconnect();
@@ -114,12 +113,22 @@ export default function About() {
               data-aos-duration="700"
               data-aos-easing="ease-out-cubic"
             >
-              <h2 data-aos="fade-up" data-aos-delay="60">Awards</h2>
+              <h2 data-aos="fade-up" data-aos-delay="60">
+                Awards
+              </h2>
               <ul>
-                <li data-aos="fade-up" data-aos-delay="120">ТОП-100 весільних фотографів (версія MyWed, 2021)</li>
-                <li data-aos="fade-up" data-aos-delay="200">Переможець «Кращий репортажний весільний фотограф» (2020)</li>
-                <li data-aos="fade-up" data-aos-delay="280">#55 місце в міжнародному рейтингу TOP100AWARDS (2022)</li>
-                <li data-aos="fade-up" data-aos-delay="360">Кращий весільний фотограф у Києві (версія WeddingUA, 2019)</li>
+                <li data-aos="fade-up" data-aos-delay="120">
+                  ТОП-100 весільних фотографів (версія MyWed, 2021)
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                  Переможець «Кращий репортажний весільний фотограф» (2020)
+                </li>
+                <li data-aos="fade-up" data-aos-delay="280">
+                  #55 місце в міжнародному рейтингу TOP100AWARDS (2022)
+                </li>
+                <li data-aos="fade-up" data-aos-delay="360">
+                  Кращий весільний фотограф у Києві (версія WeddingUA, 2019)
+                </li>
               </ul>
             </div>
 
@@ -130,7 +139,7 @@ export default function About() {
               data-aos-easing="ease-out-cubic"
             >
               <img
-               src="https://media.istockphoto.com/id/802955798/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D0%B5%D1%81%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%83%D1%94-%D0%BD%D0%B0%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%96-%D0%BD%D0%B0%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%83-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%96-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5-%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE.jpg?s=612x612&w=0&k=20&c=F3IeFRTcfhCYPp7EMD2Bh4lfifqzqUIZz7bCOtu0s2w="
+                src="https://media.istockphoto.com/id/802955798/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D0%B5%D1%81%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%83%D1%94-%D0%BD%D0%B0%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%96-%D0%BD%D0%B0%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%83-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%96-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5-%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%86%D1%82%D0%B2%D0%BE.jpg?s=612x612&w=0&k=20&c=F3IeFRTcfhCYPp7EMD2Bh4lfifqzqUIZz7bCOtu0s2w="
                 alt="Photographer at work"
               />
             </div>
@@ -139,9 +148,15 @@ export default function About() {
       </section>
 
       {/* DIPLOMAS */}
-      <section className="about-diplomas" data-aos="fade-in" data-aos-duration="600">
+      <section
+        className="about-diplomas"
+        data-aos="fade-in"
+        data-aos-duration="600"
+      >
         <div className="section-inner">
-          <h2 data-aos="fade-up" data-aos-duration="700">Diplomas</h2>
+          <h2 data-aos="fade-up" data-aos-duration="700">
+            Diplomas
+          </h2>
           <div className="diplomas-grid">
             {[
               "/img/756afa4b-b748-4153-8762-27054dd770af.png",
@@ -163,7 +178,11 @@ export default function About() {
       </section>
 
       {/* EXPERIENCE */}
-      <section className="about-experience" data-aos="fade-in" data-aos-duration="600">
+      <section
+        className="about-experience"
+        data-aos="fade-in"
+        data-aos-duration="600"
+      >
         <div className="section-inner">
           <div className="experience-grid">
             <div
@@ -172,21 +191,31 @@ export default function About() {
               data-aos-duration="700"
               data-aos-easing="ease-out-cubic"
             >
-              <h2 data-aos="fade-up" data-aos-delay="60">Experience</h2>
+              <h2 data-aos="fade-up" data-aos-delay="60">
+                Experience
+              </h2>
               <p data-aos="fade-up" data-aos-delay="140">
-                Основний напрямок моєї роботи сьогодні — це весільна фотографія та сімейні
-                фотосесії...
+                Основний напрямок моєї роботи сьогодні — це весільна фотографія
+                та сімейні фотосесії...
               </p>
               <p data-aos="fade-up" data-aos-delay="220">
-                За роки практики я провів сотні весільних зйомок, десятки рекламних кампаній...
+                За роки практики я провів сотні весільних зйомок, десятки
+                рекламних кампаній...
               </p>
 
-              <div className="experience-quote" data-aos="zoom-in" data-aos-delay="300">
+              <div
+                className="experience-quote"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
                 <img
                   src="https://loop.com.ua/image/cache/catalog/category/delovaya-fotosessiya780-min-780x780.jpg"
                   alt="Photographer"
                 />
-                <p>Я Макс, і моя головна місія — зберегти ваші щирі моменти у світлинах.</p>
+                <p>
+                  Я Макс, і моя головна місія — зберегти ваші щирі моменти у
+                  світлинах.
+                </p>
               </div>
             </div>
 
@@ -206,7 +235,11 @@ export default function About() {
       </section>
 
       {/* STATS */}
-      <section className="about-stats" data-aos="fade-in" data-aos-duration="600">
+      <section
+        className="about-stats"
+        data-aos="fade-in"
+        data-aos-duration="600"
+      >
         <div className="section-inner stats-inner">
           {a.achievements.map(
             (ach: { value: string; label: string }, i: number) => (
@@ -220,13 +253,17 @@ export default function About() {
                 <div className="value">{ach.value}</div>
                 <div className="label">{ach.label}</div>
               </div>
-            )
+            ),
           )}
         </div>
       </section>
 
       {/* REEL */}
-      <section className="about-reel" data-aos="fade-in" data-aos-duration="600">
+      <section
+        className="about-reel"
+        data-aos="fade-in"
+        data-aos-duration="600"
+      >
         <div className="section-inner">
           <div
             className="reel full-bleed"
@@ -257,7 +294,11 @@ export default function About() {
       </section>
 
       {/* STRIP GALLERY */}
-      <section className="about-strip" data-aos="fade-in" data-aos-duration="600">
+      <section
+        className="about-strip"
+        data-aos="fade-in"
+        data-aos-duration="600"
+      >
         <div className="section-inner">
           <div className="strip">
             {a.stripImages.map((src: string, i: number) => (

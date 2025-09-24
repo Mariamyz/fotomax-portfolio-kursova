@@ -1,7 +1,6 @@
-
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const API_KEY = "52389265-b28478e3c09f021e0e86c65af"; // ключ 
+const API_KEY = "52389265-b28478e3c09f021e0e86c65af"; // ключ
 
 type PixabayHit = {
   largeImageURL: string;
@@ -17,8 +16,8 @@ type PixabayResponse = {
 export type PhotosParams =
   | number
   | {
-      q?: string;      
-      limit?: number;  
+      q?: string;
+      limit?: number;
     };
 
 export const publicApi = createApi({
@@ -32,7 +31,9 @@ export const publicApi = createApi({
             ? "wedding photography"
             : arg?.q || "wedding photography";
         const perPage =
-          typeof arg === "number" ? arg : Math.max(1, Math.min(arg?.limit || 30, 200));
+          typeof arg === "number"
+            ? arg
+            : Math.max(1, Math.min(arg?.limit || 30, 200));
 
         const params = new URLSearchParams({
           key: API_KEY,
@@ -46,7 +47,9 @@ export const publicApi = createApi({
         return `?${params.toString()}`;
       },
       transformResponse: (res: PixabayResponse) => ({
-        images: res.hits.map((h) => h.largeImageURL || h.webformatURL).filter(Boolean),
+        images: res.hits
+          .map((h) => h.largeImageURL || h.webformatURL)
+          .filter(Boolean),
       }),
     }),
   }),

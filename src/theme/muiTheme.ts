@@ -12,7 +12,7 @@ const theme = createTheme({
       secondary: "rgba(255,255,255,.72)",
     },
     primary: {
-      main: "#8a86e8", 
+      main: "#8a86e8",
     },
     divider: "rgba(255,255,255,.12)",
   },

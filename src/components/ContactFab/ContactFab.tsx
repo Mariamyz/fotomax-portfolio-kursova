@@ -11,13 +11,13 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 
 type Props = {
   label?: string;
-  avatarSrc?: string;          
-  phone?: string;             
-  whatsapp?: string;           
-  telegram?: string;         
-  instagram?: string;          
-  facebook?: string;          
-  fabSize?: number;            
+  avatarSrc?: string;
+  phone?: string;
+  whatsapp?: string;
+  telegram?: string;
+  instagram?: string;
+  facebook?: string;
+  fabSize?: number;
 };
 
 export default function ContactFab({
@@ -30,11 +30,9 @@ export default function ContactFab({
   facebook,
   fabSize = 64,
 }: Props) {
-  
-  const size = Math.max(48, fabSize);    
-  const inner = Math.max(36, size - 10);  
+  const size = Math.max(48, fabSize);
+  const inner = Math.max(36, size - 10);
 
-  
   const initials =
     (label.match(/\b\w/g) || []).slice(0, 2).join("").toUpperCase() || "FM";
 
@@ -43,12 +41,15 @@ export default function ContactFab({
 
   const telHref = phone ? `tel:${onlyDigits(phone)}` : undefined;
   const waHref = whatsapp ? `https://wa.me/${onlyDigits(whatsapp)}` : undefined;
-  const tgHref = telegram ? `https://t.me/${telegram.replace(/^@/, "")}` : undefined;
+  const tgHref = telegram
+    ? `https://t.me/${telegram.replace(/^@/, "")}`
+    : undefined;
   const igHref = instagram
-    ? asUrl(instagram) ?? `https://instagram.com/${instagram.replace(/^@/, "")}`
+    ? (asUrl(instagram) ??
+      `https://instagram.com/${instagram.replace(/^@/, "")}`)
     : undefined;
   const fbHref = facebook
-    ? asUrl(facebook) ?? `https://facebook.com/${facebook.replace(/^@/, "")}`
+    ? (asUrl(facebook) ?? `https://facebook.com/${facebook.replace(/^@/, "")}`)
     : undefined;
 
   const icon = (

@@ -15,9 +15,15 @@ const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
-    setTheme: (s, a: PayloadAction<Theme>) => { s.theme = a.payload; },
-    toggleTheme: (s) => { s.theme = s.theme === "dark" ? "light" : "dark"; },
-    setBusy: (s, a: PayloadAction<boolean>) => { s.isBusy = a.payload; },
+    setTheme: (s, a: PayloadAction<Theme>) => {
+      s.theme = a.payload;
+    },
+    toggleTheme: (s) => {
+      s.theme = s.theme === "dark" ? "light" : "dark";
+    },
+    setBusy: (s, a: PayloadAction<boolean>) => {
+      s.isBusy = a.payload;
+    },
   },
 });
 

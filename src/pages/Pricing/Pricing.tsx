@@ -51,11 +51,11 @@
 
 //   return (
 //     <Box sx={{ bgcolor: "var(--section-dark)", color: "var(--text-main)" }}>
-     
+
 //       <Container sx={{ py: { xs: 4, md: 7 }, textAlign: "center" }}>
 //         <Typography
 //           component="h1"
-//           className="page-title"          
+//           className="page-title"
 //           sx={{
 //             fontSize: { xs: 34, md: 48 },
 //             letterSpacing: ".06em",
@@ -106,7 +106,7 @@
 //                 />
 
 //                 <CardContent sx={{ px: { xs: 3, md: 3.5 }, pt: 3, pb: 0 }}>
-                 
+
 //                   <Typography
 //                     sx={{
 //                       fontFamily: 'var(--font-decor)',
@@ -201,7 +201,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const PHONE_TEL = "+380671234567";
 const wa = (pkg: string) =>
   `https://wa.me/${PHONE_TEL.replace(/[^\d]/g, "")}?text=${encodeURIComponent(
-    `Hello! I'd love to book the "${pkg}" package.`
+    `Hello! I'd love to book the "${pkg}" package.`,
   )}`;
 
 const PACKAGES = [
@@ -246,7 +246,8 @@ export default function Pricing() {
           sx={{
             fontSize: { xs: 34, md: 48 },
             letterSpacing: ".06em",
-            fontFamily: "var(--font-accent), 'Playfair Display', serif !important",
+            fontFamily:
+              "var(--font-accent), 'Playfair Display', serif !important",
             mb: 1.5,
           }}
           data-aos="fade-up"
@@ -331,7 +332,11 @@ export default function Pricing() {
                       {p.duration}
                     </Typography>
                     <Typography
-                      sx={{ fontSize: PRICE_FZ, fontWeight: 700, letterSpacing: ".01em" }}
+                      sx={{
+                        fontSize: PRICE_FZ,
+                        fontWeight: 700,
+                        letterSpacing: ".01em",
+                      }}
                     >
                       {p.price}
                     </Typography>
