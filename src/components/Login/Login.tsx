@@ -5,7 +5,7 @@ import type { Engine, Container } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 import "./Login.scss";
 import { Link } from "react-router-dom";
-import { login } from "../../utils/auth";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");

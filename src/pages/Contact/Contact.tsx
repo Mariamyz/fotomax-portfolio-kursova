@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-/* ——— Текст/лінки ——— */
+
 const NAME = "МАКСИМ МАЗУРКЕВИЧ";
 const TITLE = "Професійний сімейний та весільний фотограф";
 
@@ -24,7 +24,6 @@ const LINKS = {
 };
 
 const portrait = "/img/c470272f-7d82-48f8-842c-8ee50b54d781.png";
-
 
 const schema = z.object({
   name: z.string().min(2, "Вкажіть ім’я"),
@@ -52,12 +51,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact-page">
-      {/* HERO з портретом */}
+    <div className="contact-page" data-aos="fade-in" data-aos-duration="600">
       {portrait ? (
         <section className="contact-hero">
           <div className="section-inner">
-            <div className="hero-card">
+            <div
+              className="hero-card"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-out-cubic"
+            >
               <img
                 className="portrait"
                 src={portrait}
@@ -70,20 +73,47 @@ export default function Contact() {
         </section>
       ) : null}
 
-      {/* Основний блок: заголовок + форма */}
       <section className="contact-main">
         <div className="section-inner narrow">
           <div className="heading">
-            <div className="eyebrow">{NAME}</div>
-            <h1 className="page-title">{TITLE}</h1>
-            <a className="phone" href={`tel:${PHONE_TEL}`}>
+            <div
+              className="eyebrow"
+              data-aos="fade-up"
+              data-aos-duration="650"
+            >
+              {NAME}
+            </div>
+
+            <h1
+              className="page-title"
+              data-aos="fade-up"
+              data-aos-delay="80"
+              data-aos-duration="700"
+              data-aos-easing="ease-out-cubic"
+            >
+              {TITLE}
+            </h1>
+
+            <a
+              className="phone"
+              href={`tel:${PHONE_TEL}`}
+              data-aos="fade-up"
+              data-aos-delay="160"
+              data-aos-duration="650"
+            >
               {PHONE_DISPLAY}
             </a>
           </div>
 
-          {/* Форма заявки */}
-          <form className="lead-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-            <div className="field">
+          <form
+            className="lead-form"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            data-aos="fade-up"
+            data-aos-delay="220"
+            data-aos-duration="700"
+          >
+            <div className="field" data-aos="fade-up" data-aos-delay="240">
               <label>Ім’я</label>
               <input placeholder="Ваше ім’я" {...register("name")} />
               {formState.errors.name && (
@@ -91,7 +121,7 @@ export default function Contact() {
               )}
             </div>
 
-            <div className="field">
+            <div className="field" data-aos="fade-up" data-aos-delay="300">
               <label>Телефон</label>
               <input placeholder="+380..." {...register("phone")} />
               {formState.errors.phone && (
@@ -99,15 +129,26 @@ export default function Contact() {
               )}
             </div>
 
-            <div className="field">
+            <div className="field" data-aos="fade-up" data-aos-delay="360">
               <label>Повідомлення (необов’язково)</label>
-              <textarea rows={4} placeholder="Коротко опишіть запит..." {...register("message")} />
+              <textarea
+                rows={4}
+                placeholder="Коротко опишіть запит..."
+                {...register("message")}
+              />
               {formState.errors.message && (
                 <div className="error">{formState.errors.message.message}</div>
               )}
             </div>
 
-            <button className="submit" type="submit" disabled={sending}>
+            <button
+              className="submit"
+              type="submit"
+              disabled={sending}
+              data-aos="fade-up"
+              data-aos-delay="420"
+              data-aos-duration="650"
+            >
               {sending ? "Надсилаю..." : "Надіслати заявку"}
             </button>
           </form>
